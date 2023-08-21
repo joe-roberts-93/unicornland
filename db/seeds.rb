@@ -9,7 +9,7 @@
 Unicorn.destroy.all
 
 gender = ["male", "female"]
-age = (1..10).to_a
+age = (1..12).to_a
 color = ["blue", "pink", "orange", "gray", "purple", "silver", "gold"]
 price = [1000, 50, 1_000_000, 25, 5000, 500, 10_000]
 type = ["bulky", "Fat", "Hunted", "Chobby", "Baby", "Cute", "Barbie"]
