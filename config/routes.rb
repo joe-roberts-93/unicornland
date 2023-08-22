@@ -1,13 +1,9 @@
 Rails.application.routes.draw do
+  get 'reservations/create'
   devise_for :users
-  root to: "unicorns#index"
 
-  resources :unicorns, only: %i[new create show]
-
-  # resources :reservations, only: %i[index] do
-  #   # patch "/approved", to: "reservations#approve_reservation"
-  #   # patch "/declined", to: "reservations#decline_reservation"
-  # end
-
-  # get "/my-reservations", to: "reservations#my_reservations"
+  root to: "pages#home"
+  resources :unicorns, only: %i[index new create show] do
+    resources :reservations, only: %i[create]
+  end
 end

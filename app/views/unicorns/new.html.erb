@@ -1,0 +1,10 @@
+<h2>Add your unicorn</h2>
+<%= simple_form_for([@user, @unicorn]) do |f| %>
+  <%= f.input :name %>
+  <%= f.input :gender %>
+  <%= f.input :age %>
+  <%= f.input :color %>
+  <%= f.input :price %>
+  <%= f.select :variety, collection: Unicorn::VARIETY %>
+  <%= f.submit %>
+<% end %>

@@ -1,3 +1,5 @@
+
+<h1><%= @unicorn.name %></h1>
 <div class="container">
   <div class="card">
     <div class ="photo-row">
@@ -11,7 +13,17 @@
   <p class="d-flex justify-content-between p-price"><strong>Price:</strong> <%= number_to_currency(@unicorn.price) %></p>
   <p class="d-flex justify-content-between p-price"><strong>Variety:</strong> <%= @unicorn.variety %></p>
   </div>
-<%# PU did: FRONT END to be completed %>
+
+<div>
+  <h5>Rent this unicorn</h5>
+  <p>When do you want the unicorn to be delivered ?</p>
+  <%= simple_form_for([@unicorn, @reservation]) do |f| %>
+    <%= f.input :date,
+            as: :string,
+            input_html: { data: { controller: "datepicker" } } %>
+    <%= f.submit "Rent my unicorn !", class: "btn btn-primary" %>
+  <% end %>
+</div>
 
 <div class="suggested-unicorn-card">
   <div class="row mt-4">
