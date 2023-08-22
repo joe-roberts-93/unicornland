@@ -9,7 +9,9 @@
 
 <div>
   <%= simple_form_for([@unicorn, @reservation]) do |f| %>
-    <%= f.input :date %>
+    <%= f.input :date,
+            as: :string,
+            input_html: { data: { controller: "datepicker" } } %>
     <%= f.submit "Rent my unicorn !", class: "btn btn-primary" %>
   <% end %>
 </div>
