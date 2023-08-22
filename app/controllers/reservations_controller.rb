@@ -20,6 +20,12 @@ class ReservationsController < ApplicationController
     @reservations = current_user.reservations
   end
 
+  def approve_reservation
+  end
+
+  def disapprove_reservation
+  end
+
   private
 
   def set_unicorn
