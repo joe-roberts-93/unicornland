@@ -1,8 +1,13 @@
 Rails.application.routes.draw do
   devise_for :users
-  root to: "pages#home"
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-  resources :unicorns, only: [:index, :new, :create, :show]
-  # Defines the root path route ("/")
-  # root "articles#index"
+  root to: "unicorns#index"
+
+  resources :unicorns, only: %i[new create show]
+
+  # resources :reservations, only: %i[index] do
+  #   # patch "/approved", to: "reservations#approve_reservation"
+  #   # patch "/declined", to: "reservations#decline_reservation"
+  # end
+
+  # get "/my-reservations", to: "reservations#my_reservations"
 end
