@@ -1,24 +1,24 @@
 class ReservationsController < ApplicationController
-  before_action :set_reservation, only: %i[new create]
-
-  def new
-    @reservation = Reservation.new
-  end
+  before_action :set_unicorn, only: %i[create]
 
   def create
     @reservation = Reservation.new(reservation_params)
-    @reservation.unicorn = @reservation
+    @reservation.unicorn = @unicorn
+    @reservation.user = current_user
     if @reservation.save
-      redirect_to reservations_path(@reservation)
+      redirect_to reservation_path(@reservation)
     else
-      render :new, status: :unprocessable_entity
+      render :show, status: :unprocessable_entity
     end
   end
 
   private
 
-  def reservation_params
-    params.require(:reservation).permit(:date, :approved, :user_id, :unicorn_id)
+  def set_unicorn
+    @unicorn = Unicorn.find(params[:unicorn_id])
   end
 
+  def reservation_params
+    params.require(:reservation).permit(:date, :approved, :user_id)
+  end
 end
