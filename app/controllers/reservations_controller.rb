@@ -1,6 +1,10 @@
 class ReservationsController < ApplicationController
   before_action :set_unicorn, only: %i[create]
 
+  def index
+    @reservations = current_user.reservations
+  end
+
   def create
     @reservation = Reservation.new(reservation_params)
     @reservation.unicorn = @unicorn
