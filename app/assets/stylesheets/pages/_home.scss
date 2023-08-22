@@ -1,1 +1,32 @@
 // Specific CSS for your home-page
+.gradient {
+  background: linear-gradient(27deg, #7928CA, #FF0080, #7928CA);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.home-cta {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 50vh;
+  margin: auto 0;
+}
+
+.home-cta-header {
+  padding-bottom: 50px;
+  text-align: center;
+}
+
+.cta-button {
+  border: 1px solid black;
+  padding: 10px 40px;
+  border-radius: 5px;
+  background-color: none;
+  transition: 0.2s ease-in-out;
+  &:hover {
+    background: black;
+    color: white;
+    border: none;
+  }
+}
