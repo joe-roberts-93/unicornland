@@ -7,7 +7,7 @@
 #   Character.create(name: "Luke", movie: movies.first)
 
 Unicorn.destroy_all
-User.destroy.all
+User.destroy_all
 
 gender = ["male", "female"]
 age = (1..12).to_a
