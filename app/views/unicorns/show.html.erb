@@ -1,9 +1,18 @@
 <h1><%= @unicorn.name %></h1>
+<div>
   <p><strong>Gender:</strong> <%= @unicorn.gender %></p>
   <p><strong>Age:</strong> <%= @unicorn.age %></p>
   <p><strong>Color:</strong> <%= @unicorn.color %></p>
   <p><strong>Price:</strong> <%= number_to_currency(@unicorn.price) %></p>
   <p><strong>Variety:</strong> <%= @unicorn.variety %></p>
+</div>
+
+<div>
+  <%= simple_form_for([@unicorn, @reservation]) do |f| %>
+    <%= f.input :date %>
+    <%= f.submit "Rent my unicorn !", class: "btn btn-primary" %>
+  <% end %>
+</div>
 
 <%# PU did: OPTIONAL thought would be cool to suggest others %>
   <h2>Check out more Unicorns!</h2>
