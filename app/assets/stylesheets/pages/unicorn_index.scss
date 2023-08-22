@@ -1,0 +1,31 @@
+.unicorn-card {
+  display: flex;
+  flex-direction: column;
+  color:deeppink;
+  border-radius: 3px;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+}
+
+.unicorn-card img {
+  border-radius: 3px;
+  margin-bottom: 6px;
+}
+
+.unicorn-card-text p{
+  margin: 0px;
+}
+
+.unicorn-key-info {
+  display: flex;
+  justify-content: space-between;
+}
+
+.unicorn-price-container {
+  display: flex;
+    & .price-bold {
+      font-weight: 700;
+    }
+}
