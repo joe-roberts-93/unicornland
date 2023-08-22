@@ -1,5 +1,5 @@
 <h2>Add your unicorn</h2>
-<%= simple_form_for(@unicorn) do |f| %>
+<%= simple_form_for([@user, @unicorn]) do |f| %>
   <%= f.input :name %>
   <%= f.input :gender %>
   <%= f.input :age %>

@@ -7,9 +7,15 @@ class UnicornsController < ApplicationController
      @unicorn = Unicorn.new
    end
 
-   def create
+  def create
+    @unicorn = Unicorn.new(unicorn_params)
     @unicorn.user = current_user
-   end
+    if @unicorn.save
+      redirect_to unicorn_path(@unicorn)
+    else
+      render :new, status: :unprocessable_entity
+    end
+  end
 
   def show
     @unicorn = Unicorn.find(params[:id])
@@ -22,6 +28,6 @@ class UnicornsController < ApplicationController
 private
 
   def unicorn_params
-    params.require(:unicorn_id).permit(:id, :gender, :age, :color, :price, :variety)
+    params.require(:unicorn).permit(:name, :gender, :age, :color, :price, :variety)
   end
 end
