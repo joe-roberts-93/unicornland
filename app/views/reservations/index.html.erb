@@ -1,0 +1,24 @@
+<div class="container">
+<h1>Reserved Unicorns</h1>
+  <div class="row">
+    <div class="col">
+      <div class="row">
+        <div class="col">User</div>
+        <div class="col">Unicorn</div>
+        <div class="col">Date</div>
+        <div class="col">Approved</div>
+      </div>
+    </div>
+  </div>
+
+  <% @reservations.each do |reservation|%>
+  <% if reservation.user.owner == true %>
+  <div class="row">
+  <div class="col"> <%= reservation.user.first_name %></div>
+  <div class="col"> <%= reservation.unicorn.name %></div>
+  <div class="col"> <%= reservation.date %></div>
+  <div class="col"><%= reservation.approved ? 'Yes' : 'No' %></div>
+  <% end %>
+  <% end %>
+
+</div>
