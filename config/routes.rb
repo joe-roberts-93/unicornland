@@ -7,4 +7,5 @@ Rails.application.routes.draw do
     resources :reservations, only: %i[create]
   end
   resources :reservations, only: %i[index]
+  get "/my-reservations", to: "reservations#user_reservations"
 end

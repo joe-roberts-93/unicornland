@@ -10,10 +10,14 @@ class ReservationsController < ApplicationController
     @reservation.unicorn = @unicorn
     @reservation.user = current_user
     if @reservation.save
-      redirect_to reservation_path(@reservation)
+      redirect_to my_reservations_path
     else
       render :show, status: :unprocessable_entity
     end
+  end
+
+  def user_reservations
+    @reservations = current_user.reservations
   end
 
   private
