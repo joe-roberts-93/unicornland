@@ -13,7 +13,7 @@ gender = ["male", "female"]
 age = (1..12).to_a
 color = ["blue", "pink", "orange", "gray", "purple", "silver", "bronze"]
 price = [1000, 50, 100_000, 25, 5000, 500, 10_000]
-variety = ["bulky", "Fat", "Hunted", "Chubby", "Baby", "Cute", "Barbie"]
+variety = ["bulky", "Fat", "Haunted", "Chubby", "Baby", "Cute", "Barbie"]
 
 owner = User.create!(first_name: "Joe", last_name: "Roberts", email: "joe@email.com", password: "secret", owner: true)
 
