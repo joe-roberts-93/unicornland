@@ -1,0 +1,16 @@
+<h1><%= @unicorn.name %></h1>
+  <p><strong>Gender:</strong> <%= @unicorn.gender %></p>
+  <p><strong>Age:</strong> <%= @unicorn.age %></p>
+  <p><strong>Color:</strong> <%= @unicorn.color %></p>
+  <p><strong>Price:</strong> <%= number_to_currency(@unicorn.price) %></p>
+  <p><strong>Variety:</strong> <%= @unicorn.variety %></p>
+
+<%# PU did: OPTIONAL thought would be cool to suggest others %>
+  <h2>Check out more Unicorns!</h2>
+  <ul>
+    <% @unicorns.each do |unicorn| %>
+      <li><%= link_to unicorn.name, unicorn_path(unicorn) %></li>
+    <% end %>
+  </ul>
+
+<%= link_to 'All Unicorns', unicorns_path %>

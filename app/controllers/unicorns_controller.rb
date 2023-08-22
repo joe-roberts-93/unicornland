@@ -3,24 +3,21 @@ class UnicornsController < ApplicationController
     @unicorns = Unicorn.all
   end
 
-  def new
-    @unicorns = Unicorn.new
+  # def new
+  #   @unicorns = Unicorn.new
+  # end
+
+  def show
+    @unicorn = Unicorn.find(params[:id])
+  # TODO: improve logic to recommend more relevant unicorns
+    @unicorns = Unicorn.first(3)
   end
 
-#   def create
-#     @unicorn = unicorn.new(unicorn_params)
-#     if @unicorn.save
-#       redirect_to unicorn_path(@unicorn)
-#     else
-#       render :new, status: :unprocessable_entity
-#     end
-#   end
 
-#   private
 
-#   def unicorn_params
-#     params.require(:unicorn).permit()
-#   end
-# end
+private
 
+  def unicorn_params
+    params.require(:unicorn_id).permit(:id, :gender, :age, :color, :price, :variety)
+  end
 end
