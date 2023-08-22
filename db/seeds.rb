@@ -15,18 +15,18 @@ color = ["blue", "pink", "orange", "gray", "purple", "silver", "bronze"]
 price = [1000, 50, 100_000, 25, 5000, 500, 10_000]
 variety = ["bulky", "Fat", "Haunted", "Chubby", "Baby", "Cute", "Barbie"]
 
+User.create!(first_name: "Sébastien", last_name: "Fournier", email: "seb@email.com", password: "secret")
 owner = User.create!(first_name: "Joe", last_name: "Roberts", email: "joe@email.com", password: "secret", owner: true)
 
 Unicorn.create!(name: "joe", gender: "male", age: 12, color: "gold", price: "1_000_000", variety: "fat", user: owner)
 Unicorn.create!(name: "priscilla", gender: "female", age: 1, color: "gold", price: "1_000_000", variety: "business", user: owner)
 Unicorn.create!(name: "daphne", gender: "female", age: 1, color: "gold", price: "1_000_000", variety: "barbie", user: owner)
-Unicorn.create!(name: "sebastien", gender: "male", age: 7, color: "gold", price: "1_000_000", variety: "bulky", user: owner)
+Unicorn.create!(name: "seb", gender: "male", age: 7, color: "gold", price: "1_000_000", variety: "bulky", user: owner)
 
 Unicorn.create!(name: "fred", gender: gender.sample, age: age.sample, color: color.sample, price: price.sample, variety: variety.sample, user: owner)
 Unicorn.create!(name: "justin", gender: gender.sample, age: age.sample, color: color.sample, price: price.sample, variety: variety.sample, user: owner)
 Unicorn.create!(name: "marcelo", gender: gender.sample, age: age.sample, color: color.sample, price: price.sample, variety: variety.sample, user: owner)
 Unicorn.create!(name: "audrey", gender: gender.sample, age: age.sample, color: color.sample, price: price.sample, variety: variety.sample, user: owner)
-Unicorn.create!(name: "sebastien", gender: gender.sample, age: age.sample, color: color.sample, price: price.sample, variety: variety.sample, user: owner)
 Unicorn.create!(name: "marcela", gender: gender.sample, age: age.sample, color: color.sample, price: price.sample, variety: variety.sample, user: owner)
 Unicorn.create!(name: "grant", gender: gender.sample, age: age.sample, color: color.sample, price: price.sample, variety: variety.sample, user: owner)
 Unicorn.create!(name: "grace", gender: gender.sample, age: age.sample, color: color.sample, price: price.sample, variety: variety.sample, user: owner)

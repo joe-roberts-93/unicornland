@@ -1,13 +1,22 @@
+
 <h1><%= @unicorn.name %></h1>
-<div>
-  <p><strong>Gender:</strong> <%= @unicorn.gender %></p>
-  <p><strong>Age:</strong> <%= @unicorn.age %></p>
-  <p><strong>Color:</strong> <%= @unicorn.color %></p>
-  <p><strong>Price:</strong> <%= number_to_currency(@unicorn.price) %></p>
-  <p><strong>Variety:</strong> <%= @unicorn.variety %></p>
-</div>
+<div class="container">
+  <div class="card">
+    <div class ="photo-row">
+    <div class="col-md-6">
+  <%= image_tag "business.png", class: "rounded", alt: "Business Unicorn", width: 300 %>
+    <h1 class="card-title"><%= @unicorn.name %></h1>
+  <div class="card-body">
+  <p class="d-flex justify-content-between p-price"><strong>Gender:</strong> <%= @unicorn.gender %></p>
+  <p class="d-flex justify-content-between p-gender"><strong>Age:</strong> <%= @unicorn.age %></p>
+  <p class="d-flex justify-content-between p-price"><strong>Color:</strong> <%= @unicorn.color %></p>
+  <p class="d-flex justify-content-between p-price"><strong>Price:</strong> <%= number_to_currency(@unicorn.price) %></p>
+  <p class="d-flex justify-content-between p-price"><strong>Variety:</strong> <%= @unicorn.variety %></p>
+  </div>
 
 <div>
+  <h5>Rent this unicorn</h5>
+  <p>When do you want the unicorn to be delivered ?</p>
   <%= simple_form_for([@unicorn, @reservation]) do |f| %>
     <%= f.input :date,
             as: :string,
@@ -16,12 +25,16 @@
   <% end %>
 </div>
 
+<div class="suggested-unicorn-card">
+  <div class="row mt-4">
+    <div class="col-md-6">
 <%# PU did: OPTIONAL thought would be cool to suggest others %>
   <h2>Check out more Unicorns!</h2>
-  <ul>
+  <ul class="list-unstyled">
     <% @unicorns.each do |unicorn| %>
       <li><%= link_to unicorn.name, unicorn_path(unicorn) %></li>
     <% end %>
   </ul>
+    </div>
 
-<%= link_to 'All Unicorns', unicorns_path %>
+<%= link_to 'All Unicorns', unicorns_path, class: "btn btn-primary" %>

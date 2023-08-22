@@ -1,0 +1,29 @@
+<div class="container mt-5">
+  <div class="d-flex justify-content-center">
+    <h1>My reservations</h1>
+  </div>
+
+  <div class="row mt-5">
+    <% @reservations.each do |reservation| %>
+
+      <% if reservation.user.owner == false %>
+        <div class="col-3">
+          <div class="card mb-5" style="width: 18rem;">
+            <img src="https://res.cloudinary.com/dpfoq3knh/image/upload/v1692728793/unicorn_ivdrjs.jpg" class="card-img-top" alt="...">
+            <div class="car-body p-3">
+              <h5 class="card-title"><%= reservation.unicorn.name %></h5>
+              <p class="card-text">
+                <%= reservation.unicorn.gender %>
+                <%= reservation.unicorn.age %>
+                <%= reservation.unicorn.color %>
+                <%= reservation.unicorn.price %>
+                <%= reservation.unicorn.variety %>
+              </p>
+            </div>
+          </div>
+        </div>
+      <% end %>
+
+    <% end %>
+  </div>
+</div>
