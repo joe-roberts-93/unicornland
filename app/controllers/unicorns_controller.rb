@@ -3,9 +3,13 @@ class UnicornsController < ApplicationController
     @unicorns = Unicorn.all
   end
 
-  # def new
-  #   @unicorns = Unicorn.new
-  # end
+   def new
+     @unicorn = Unicorn.new
+   end
+
+   def create
+    @unicorn.user = current_user
+   end
 
   def show
     @unicorn = Unicorn.find(params[:id])
