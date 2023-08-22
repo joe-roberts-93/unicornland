@@ -11,8 +11,8 @@ class UnicornsController < ApplicationController
     @unicorn = Unicorn.find(params[:id])
   # TODO: improve logic to recommend more relevant unicorns
     @unicorns = Unicorn.first(3)
+    @reservation = Reservation.new
   end
-
 
 
 private
