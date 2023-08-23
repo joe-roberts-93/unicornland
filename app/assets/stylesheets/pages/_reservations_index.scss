@@ -1,5 +1,13 @@
+.container-height {
+  height: 70vh;
+  margin: auto 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .container-reservation {
-  max-width: 800px;
+  max-width: 1000px;
   margin: 0 auto;
   padding: 20px;
   background-color: #fcb1d6;
@@ -8,7 +16,13 @@
 }
 
 .details-reservation {
-  color: #aa2766;
+  color: #7928CA;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.row-reservation {
+  color: #7928CA;
   text-align: center;
   margin-bottom: 20px;
 }
@@ -25,3 +39,24 @@
   border-radius: 3px;
   margin-bottom: 6px;
 }
+
+.row-header {
+  background-color: #FF0080;
+  padding: 10px 0;
+  text-align: left;
+  font-weight: bold;
+  color: #ff69b4;
+  }
+
+  .row-content {
+    padding: 10px 0;
+    text-align: center;
+    }
+
+  .yes {
+    color: #00ff00;
+  }
+
+  .no {
+    color: #ff0000;
+  }
