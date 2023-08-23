@@ -2,7 +2,13 @@ class ReservationsController < ApplicationController
   before_action :set_unicorn, only: %i[create]
 
   def index
-    @reservations = current_user.reservations
+    # @reservations = current_user.reservations
+    @my_unicorns = current_user.unicorns
+    @reservations = []
+    @my_unicorns.each do |unicorn|
+      @reservations << unicorn.reservations.to_a
+    end
+    @reservations.flatten!
   end
 
   def create
@@ -12,7 +18,8 @@ class ReservationsController < ApplicationController
     if @reservation.save
       redirect_to my_reservations_path
     else
-      render :show, status: :unprocessable_entity
+      @unicorns = Unicorn.first(3)
+      render "unicorns/show", status: :unprocessable_entity
     end
   end
 
@@ -20,10 +27,16 @@ class ReservationsController < ApplicationController
     @reservations = current_user.reservations
   end
 
-  def approve_reservation
+  def accept
+    @reservation = Reservation.find(params[:id])
+    @reservation.update(approved: true)
+    redirect_to reservations_path
   end
 
-  def disapprove_reservation
+  def decline
+    @reservation = Reservation.find(params[:id])
+    @reservation.update(approved: false)
+    redirect_to reservations_path
   end
 
   private
