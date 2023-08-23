@@ -2,7 +2,13 @@ class ReservationsController < ApplicationController
   before_action :set_unicorn, only: %i[create]
 
   def index
-    @reservations = current_user.reservations
+    # @reservations = current_user.reservations
+    @my_unicorns = current_user.unicorns
+    @reservations = []
+    @my_unicorns.each do |unicorn|
+      @reservations << unicorn.reservations.to_a
+    end
+    @reservations.flatten!
   end
 
   def create
@@ -22,17 +28,15 @@ class ReservationsController < ApplicationController
   end
 
   def accept
-    @unicorn = Unicorn.find(params[:unicorn_id])
-    @reservation = Reservation.find(params[:user_id])
-    @reservation.unicorn = @unicorn
+    @reservation = Reservation.find(params[:id])
     @reservation.update(approved: true)
-    redirect_to root_path
+    redirect_to reservations_path
   end
 
   def decline
-    @reservation = Reservation.find(params[:user_id])
+    @reservation = Reservation.find(params[:id])
     @reservation.update(approved: false)
-    redirect_to root_path
+    redirect_to reservations_path
   end
 
   private
