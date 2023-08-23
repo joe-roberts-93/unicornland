@@ -1,0 +1,22 @@
+.container-reservation {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #aa2766;
+  border-radius: 10px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+.details-reservation {
+  color: #ff69b4;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.yes {
+  color: #00ff00;
+}
+
+.no {
+  color: #ff0000;
+}
