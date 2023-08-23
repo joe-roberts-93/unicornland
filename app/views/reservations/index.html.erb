@@ -16,7 +16,10 @@
   <% if reservation.user.owner == true %>
     <div class="row py-3">
   <div class="col"> <%= reservation.user.first_name %></div>
-  <div class="col"> <%= reservation.unicorn.name %></div>
+  <div class="col" class="unicorn-card">
+      <img src="https://res.cloudinary.com/dpfoq3knh/image/upload/v1692728793/unicorn_ivdrjs.jpg" alt="Business Logo" class="img-fluid">
+      <%= reservation.unicorn.name %>
+  </div>
   <div class="col"> <%= reservation.date %></div>
   <div class="col"><%= reservation.approved ? 'Yes' : 'No' %></div>
   <% end %>
