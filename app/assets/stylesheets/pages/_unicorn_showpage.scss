@@ -1,0 +1,125 @@
+h2 {
+  text-align: center;
+  text-transform: capitalize;
+  margin: 20px 0;
+}
+
+.gradient {
+  color: linear-gradient(27deg, #7928CA, #FF0080, #7928CA);
+}
+
+.show-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+  & img {
+    border-radius: 100%;
+    height: 300px;
+    width: 300px;
+  }
+  & h3 {
+    text-transform: capitalize;
+  }
+  & .show-unicorn-info {
+    display: flex;
+    flex-direction: column;
+    & .show-unicorn-info-tags {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      & .tag {
+        display: flex;
+        flex-direction: row;
+        gap: 90px;
+        justify-content: space-between;
+        margin-bottom: -10px;
+        & p {
+          font-weight: 700;
+          padding: 0;
+        }
+      }
+    }
+  }
+}
+
+.rent-unicorn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 50px;
+}
+
+.rent-form form {
+  gap: 10px;
+  align-items: center;
+  & .date-input {
+    border-radius: 5px;
+    border: 1px solid black;
+  }
+  & .button {
+  border: 1px solid black;
+  padding: 10px 40px;
+  border-radius: 5px;
+  background-color: none;
+  transition: 0.2s ease-in-out;
+    &:hover {
+      background: black;
+      color: white;
+      border: none;
+    }
+  }
+}
+
+.unicorn-suggestion {
+  padding: 30px 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  & .button {
+  border: 1px solid black;
+  color: black;
+  padding: 10px 40px;
+  border-radius: 5px;
+  background-color: none;
+  transition: 0.2s ease-in-out;
+    &:hover {
+      background: black;
+      color: white;
+      border: none;
+    }
+  }
+}
+
+.iteration {
+  display: flex;
+  gap: 50px;
+  margin: 30px 0;
+  justify-content: center;
+  align-items: center;
+  & h5 {
+    text-transform: capitalize;
+  }
+}
+.unicorn-cards {
+  background-color: rgb(219, 219, 219);
+  border-radius: 5px;
+  display: flex;
+}
+
+.unicorn-cards-info {
+  background-color: rgb(230, 230, 230);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  padding: 10px 30px;
+  border-radius: 5px;
+  & img {
+    height: 80px;
+    width: 80px;
+    border-radius: 100%;
+  }
+}
