@@ -1,6 +1,10 @@
 <h2><%= @unicorn.name %></h2>
 <div class="show-container">
-  <%= image_tag "business.png"%>
+  <% if @unicorn.photo.key.nil? %>
+    <%= image_tag "unicorn_placeholder.jpg" %>
+  <% else %>
+    <%= cl_image_tag @unicorn.photo.key%>
+  <% end %>
   <div class="show-unicorn-info">
     <div class="show-unicorn-info-tags">
       <div class="tag">
