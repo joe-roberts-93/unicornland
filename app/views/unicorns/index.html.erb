@@ -7,7 +7,7 @@
           <div class="unicorn-card mb-5">
             <%# add the image from cl with unicorn.photo.key %>
             <% if unicorn.photo.key.nil? %>
-            <%= image_tag "unicorn-logo.png" %>
+            <%= image_tag "unicorn_placeholder.jpg" %>
             <% else %>
             <%= cl_image_tag unicorn.photo.key, class: "card-img-top", alt: "A photo of this unicorn" %>
             <% end %>
