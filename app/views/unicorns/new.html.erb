@@ -6,5 +6,6 @@
   <%= f.input :color %>
   <%= f.input :price %>
   <%= f.select :variety, collection: Unicorn::VARIETY %>
+  <%= f.input :photo, as: :file %>
   <%= f.submit %>
 <% end %>

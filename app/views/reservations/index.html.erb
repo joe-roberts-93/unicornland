@@ -1,3 +1,8 @@
+<div class="container">
+<h1>Reservations</h1>
+  <div class="row">
+    <div class="col">
+      <div class="row">
 <div class= "container-height">
 <div class="container-reservation">
   <h1 class="details-reservation">Reserved Unicorns</h1>
@@ -8,6 +13,7 @@
         <div class="col">Unicorn</div>
         <div class="col">Date</div>
         <div class="col">Approved</div>
+        <div class="col">Accept Reservation</div>
       </div>
     </div>
   </div>
@@ -22,7 +28,21 @@
   </div>
   <div class="col"> <%= reservation.date %></div>
   <div class="col"><%= reservation.approved ? 'Yes' : 'No' %></div>
+  <div class="col">
+  <% if reservation %>
+    <div class="btn-group">
+    <%= link_to accept_unicorn_reservation_path(reservation.unicorn, reservation), data: { turbo_method: :patch }, class: 'btn btn-success' do %>
+      <i class="fas fa-check"></i> Accept
+        <% end %>
+    <%= link_to decline_unicorn_reservation_path(reservation.unicorn, reservation), data: { turbo_method: :patch },  class: 'btn btn-danger' do %>
+      <i class="fas fa-times"></i> Decline
+        <% end %>
+  <% else %>
+  <%= "Approved" %>
+    <% end %>
+      <% end %>
   <% end %>
   <% end %>
 </div>
 </div>
+  <% end %>

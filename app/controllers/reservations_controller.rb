@@ -12,7 +12,8 @@ class ReservationsController < ApplicationController
     if @reservation.save
       redirect_to my_reservations_path
     else
-      render :show, status: :unprocessable_entity
+      @unicorns = Unicorn.first(3)
+      render "unicorns/show", status: :unprocessable_entity
     end
   end
 
@@ -20,10 +21,18 @@ class ReservationsController < ApplicationController
     @reservations = current_user.reservations
   end
 
-  def approve_reservation
+  def accept
+    @unicorn = Unicorn.find(params[:unicorn_id])
+    @reservation = Reservation.find(params[:user_id])
+    @reservation.unicorn = @unicorn
+    @reservation.update(approved: true)
+    redirect_to root_path
   end
 
-  def disapprove_reservation
+  def decline
+    @reservation = Reservation.find(params[:user_id])
+    @reservation.update(approved: false)
+    redirect_to root_path
   end
 
   private
