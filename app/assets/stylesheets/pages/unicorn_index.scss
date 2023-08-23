@@ -3,9 +3,11 @@
   flex-direction: column;
   color:deeppink;
   border-radius: 3px;
+  transition-timing-function: ease-in-out;
+  transition: 0.4s;
 
   &:hover {
-    transform: scale(1.1);
+    transform: scale(1.1) rotate(2deg)
   }
 }
 
