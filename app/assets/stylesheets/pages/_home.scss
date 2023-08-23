@@ -30,3 +30,42 @@
     border: none;
   }
 }
+
+.about {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 70%;
+  margin: 0 auto;
+  & p {
+    text-align: center;
+  }
+}
+
+.about-team-member {
+  display: flex;
+  flex-direction: row;
+  gap: 50px;
+}
+
+.about-team-member-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 40px 0;
+  & h6 {
+    text-transform:capitalize;
+    margin: 10px 0;
+  }
+  & .circle {
+    height: 50px;
+    width: 50px;
+    background-color: black;
+    border-radius: 100%;
+  }
+  & p {
+    padding: 10px 50px;
+  }
+}

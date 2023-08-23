@@ -8,6 +8,27 @@
 
 <div class="about">
   <h2>Who are we ?</h2>
-  <p>We are the <span class="gradient">UnicornTeam</span>. </p>
-  <p>Daphné :
+  <p>We are the <span class="gradient">UnicornTeam</span>. As supreme unicorns, we ensure you can rent our best unicorn descendants on the market !</p>
+
+  <div class="about-team-member">
+    <% @unicorns.each do |unicorn| %>
+      <% if unicorn.team_member %>
+        <div class="about-team-member-card">
+          <div class="circle"></div>
+          <h6><%= unicorn.name %></h6>
+          <p>
+            <% if unicorn.variety == "fat" %>
+              DUH. I'm a <%= unicorn.age %> <%= unicorn.age == 1 ? "year old" : "years old "%> <%= unicorn.color %> and a <%= unicorn.variety %> unicorn.</p>
+            <% elsif unicorn.variety == "business" %>
+              Hoy. I'm a <%= unicorn.age %> <%= unicorn.age == 1 ? "year old" : "years old "%>, <%= unicorn.color %> and a <%= unicorn.variety %> unicorn.</p>
+            <% elsif unicorn.variety == "barbie" %>
+              Heyyy, I'm a <%= unicorn.age %> <%= unicorn.age == 1 ? "year old" : "years old "%>, <%= unicorn.color %> and a <%= unicorn.variety %> unicorn.</p>
+            <% elsif unicorn.variety == "bulky" %>
+              MAMAMIA ! I'm a <%= unicorn.age %> <%= unicorn.age == 1 ? "year old" : "years old "%>, <%= unicorn.color %> and a <%= unicorn.variety %> unicorn.</p>
+            <% end %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+  <p>By the way, you can rent us, and we're worth $<span class="gradient"><%= @unicorns.first.price.to_i %> </span>!!</p>
 </div>
