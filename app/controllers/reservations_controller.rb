@@ -22,15 +22,17 @@ class ReservationsController < ApplicationController
   end
 
   def accept
+    @unicorn = Unicorn.find(params[:unicorn_id])
     @reservation = Reservation.find(params[:user_id])
+    @reservation.unicorn = @unicorn
     @reservation.update(approved: true)
-    redirect_to accepted_reservation_path(@reservation)
+    redirect_to root_path
   end
 
   def decline
     @reservation = Reservation.find(params[:user_id])
     @reservation.update(approved: false)
-    redirect_to declined_reservation_path(@reservation)
+    redirect_to root_path
   end
 
 
