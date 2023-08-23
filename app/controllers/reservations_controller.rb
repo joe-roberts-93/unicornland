@@ -3,6 +3,7 @@ class ReservationsController < ApplicationController
 
   def index
     @reservations = current_user.reservations
+
   end
 
   def create
@@ -20,11 +21,18 @@ class ReservationsController < ApplicationController
     @reservations = current_user.reservations
   end
 
-  def approve_reservation
+  def accept
+    @reservation = Reservation.find(params[:user_id])
+    @reservation.update(approved: true)
+    redirect_to accepted_reservation_path(@reservation)
   end
 
-  def disapprove_reservation
+  def decline
+    @reservation = Reservation.find(params[:user_id])
+    @reservation.update(approved: false)
+    redirect_to declined_reservation_path(@reservation)
   end
+
 
   private
 
