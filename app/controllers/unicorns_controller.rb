@@ -3,9 +3,9 @@ class UnicornsController < ApplicationController
     @unicorns = Unicorn.all
   end
 
-   def new
-     @unicorn = Unicorn.new
-   end
+  def new
+    @unicorn = Unicorn.new
+  end
 
   def create
     @unicorn = Unicorn.new(unicorn_params)
@@ -19,13 +19,12 @@ class UnicornsController < ApplicationController
 
   def show
     @unicorn = Unicorn.find(params[:id])
-  # TODO: improve logic to recommend more relevant unicorns
+    # TODO: improve logic to recommend more relevant unicorns
     @unicorns = Unicorn.first(3)
     @reservation = Reservation.new
   end
 
-
-private
+  private
 
   def unicorn_params
     params.require(:unicorn).permit(:name, :gender, :age, :color, :price, :variety)

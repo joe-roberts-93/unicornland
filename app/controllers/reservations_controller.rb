@@ -3,7 +3,6 @@ class ReservationsController < ApplicationController
 
   def index
     @reservations = current_user.reservations
-
   end
 
   def create
@@ -13,7 +12,8 @@ class ReservationsController < ApplicationController
     if @reservation.save
       redirect_to my_reservations_path
     else
-      render :show, status: :unprocessable_entity
+      @unicorns = Unicorn.first(3)
+      render "unicorns/show", status: :unprocessable_entity
     end
   end
 
@@ -34,7 +34,6 @@ class ReservationsController < ApplicationController
     @reservation.update(approved: false)
     redirect_to root_path
   end
-
 
   private
 
