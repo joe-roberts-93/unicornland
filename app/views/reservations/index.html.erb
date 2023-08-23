@@ -3,6 +3,12 @@
   <div class="row">
     <div class="col">
       <div class="row">
+<div class= "container-height">
+<div class="container-reservation">
+  <h1 class="details-reservation">Reserved Unicorns</h1>
+  <div class="row-header" class= "details-reservation">
+    <div class="col-content">
+      <div class="row bg-light py-3" class= "row-reservation">
         <div class="col">User</div>
         <div class="col">Unicorn</div>
         <div class="col">Date</div>
@@ -14,9 +20,12 @@
 
   <% @reservations.each do |reservation|%>
   <% if reservation.user.owner == true %>
-  <div class="row">
+    <div class="row py-3">
   <div class="col"> <%= reservation.user.first_name %></div>
-  <div class="col"> <%= reservation.unicorn.name %></div>
+  <div class="col" class="unicorn-card">
+  <%= reservation.unicorn.name %>
+      <img src="https://res.cloudinary.com/dpfoq3knh/image/upload/v1692728793/unicorn_ivdrjs.jpg" alt="Business Logo" class="img-fluid">
+  </div>
   <div class="col"> <%= reservation.date %></div>
   <div class="col"><%= reservation.approved ? 'Yes' : 'No' %></div>
   <div class="col">
@@ -32,5 +41,8 @@
   <%= "Approved" %>
     <% end %>
       <% end %>
+  <% end %>
+  <% end %>
+</div>
 </div>
   <% end %>
