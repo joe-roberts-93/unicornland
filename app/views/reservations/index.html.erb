@@ -1,10 +1,4 @@
-<div class="container">
-  <h1>Reservations</h1>
-  <div class="row">
-    <div class="col">
-      <div class="row">
-<div class= "container-height">
-<div class="container-reservation">
+<div class="container mt-5">
   <h1 class="details-reservation">Reserved Unicorns</h1>
   <div class="row-header" class= "details-reservation">
     <div class="col-content">
@@ -19,7 +13,6 @@
   </div>
 
   <% @reservations.each do |reservation|%>
-  
     <div class="row">
       <div class="col"> <%= reservation.user.first_name %></div>
       <div class="col"> <%= reservation.unicorn.name %></div>
@@ -39,31 +32,4 @@
         <% end %>
       </div>
     </div>
-  <% if reservation.user.owner == true %>
-    <div class="row py-3">
-  <div class="col"> <%= reservation.user.first_name %></div>
-  <div class="col" class="unicorn-card">
-  <%= reservation.unicorn.name %>
-      <img src="https://res.cloudinary.com/dpfoq3knh/image/upload/v1692728793/unicorn_ivdrjs.jpg" alt="Business Logo" class="img-fluid">
-  </div>
-  <div class="col"> <%= reservation.date %></div>
-  <div class="col"><%= reservation.approved ? 'Yes' : 'No' %></div>
-  <div class="col">
-  <% if reservation %>
-    <div class="btn-group">
-    <%= link_to accept_unicorn_reservation_path(reservation.unicorn, reservation), data: { turbo_method: :patch }, class: 'btn btn-success' do %>
-      <i class="fas fa-check"></i> Accept
-        <% end %>
-    <%= link_to decline_unicorn_reservation_path(reservation.unicorn, reservation), data: { turbo_method: :patch },  class: 'btn btn-danger' do %>
-      <i class="fas fa-times"></i> Decline
-        <% end %>
-  <% else %>
-  <%= "Approved" %>
-    <% end %>
-      <% end %>
   <% end %>
-  <% end %>
-</div>
-</div>
-  <% end %>
-</div>
