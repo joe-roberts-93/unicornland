@@ -4,7 +4,7 @@
   <div class="card">
     <div class ="photo-row">
     <div class="col-md-6">
-  <%= image_tag "business.png", class: "rounded", alt: "Business Unicorn", width: 300 %>
+  <%= cl_image_tag @unicorn.photo.key, class: "rounded", alt: "A photo of this unicorn", width: 300 %>
     <h1 class="card-title"><%= @unicorn.name %></h1>
   <div class="card-body">
   <p class="d-flex justify-content-between p-price"><strong>Gender:</strong> <%= @unicorn.gender %></p>
