@@ -16,16 +16,18 @@
       <td><%= reservation.unicorn.name %></td>
       <td><%= reservation.date %></td>
       <td><%= reservation.approved ? 'Yes' : 'No' %></td>
-      <% if reservation %>
-          <div class="btn-group">
-      <td><%= link_to accept_reservation_path(reservation), data: { turbo_method: :patch }, class: 'btn btn-success' do %>
+      <td>
+        <% if reservation.approved.nil? %>
+          <%= link_to accept_reservation_path(reservation), data: { turbo_method: :patch }, class: 'btn btn-success' do %>
             <i class="fas fa-check"></i> Accept
-              <% end %>
-              <%= link_to decline_reservation_path(reservation), data: { turbo_method: :patch },  class: 'btn btn-danger' do %>
+          <% end %>
+          <%= link_to decline_reservation_path(reservation), data: { turbo_method: :patch },  class: 'btn btn-danger' do %>
             <i class="fas fa-times"></i> Decline
-              <% end %></td>
-      <% else %>
-          <%= "Approved" %>
-      <% end %>
-    <% end %>
+          <% end %>
+        <% else %>
+          <%= reservation.approved ? 'Approved' : 'Declined' %>
+        <% end %>
+      </td>
+    </tr>
+  <% end %>
 </table>
