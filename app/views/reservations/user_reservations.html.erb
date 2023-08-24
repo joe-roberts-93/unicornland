@@ -16,15 +16,20 @@
               <h5 class="card-title"><%= reservation.unicorn.name.capitalize %></h5>
               <p class="card-text"> Rented from: <%= reservation.date %></p>
               <p class="card-text"> Owner: <%= reservation.unicorn.user.first_name %></p>
-              <p class="card-text">
+
               <% if reservation.approved %>
-                <%= "Confirmed" %>
-              <% elsif reservation.approved == false %>
-                <% "Declined" %>
-              <% else %>
-                <%= "Pending confirmation" %>
-              <%end%>
+              <p class="card-text" style="color:green">
+                <%= "Status: Confirmed" %>
               </p>
+              <% elsif reservation.approved == false %>
+              <p class="card-text" style="color:red">
+                <% "Status: Declined" %>
+              </p>
+              <% else %>
+              <p class="card-text" style="color:gray">
+                <%= "Status: Pending confirmation" %>
+              </p>
+              <%end%>
             </div>
           <%end%>
           <% end %>
