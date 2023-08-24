@@ -45,16 +45,16 @@
               input_html: { data: { controller: "datepicker" }, class: "date-input" }
               %>
       <%= button_tag(type: 'submit', class: "button") do %>
-         Rent your <span class="gradient">unicorn</span> !
+        Rent your <span class="gradient">unicorn</span> !
       <% end %>
     <% end %>
   </div>
 </div>
 <%# <span class="gradient">unicorn</span> %>
 
-
 <div class="unicorn-suggestion">
   <h2>Check out for more Unicorns !</h2>
+
   <div class="iteration">
     <% @unicorns.each do |unicorn| %>
       <div class="unicorn-cards-info">
@@ -69,5 +69,4 @@
   </div>
 
 <%= link_to 'See all our unicorns', unicorns_path, class: "button" %>
-
 </div>
