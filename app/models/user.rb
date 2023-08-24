@@ -6,6 +6,4 @@ class User < ApplicationRecord
   has_many :unicorns
   has_many :reservations
   has_many :bookings_as_owner, through: :unicorns, source: :reservations
-
-
 end
