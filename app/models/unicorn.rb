@@ -1,5 +1,5 @@
 class Unicorn < ApplicationRecord
-  VARIETY = ["Bulky", "Fat", "Haunted", "Business", "Baby", "Cute", "Barbie"].freeze
+  VARIETY = ["Bulky", "Fat", "Haunted", "Business", "Murder", "Cute", "Barbie"].freeze
 
   belongs_to :user
   has_many :reservations
