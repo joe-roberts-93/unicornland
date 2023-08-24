@@ -2,7 +2,7 @@ class ReservationsController < ApplicationController
   before_action :set_unicorn, only: %i[create]
 
   def index
-    # @reservations = current_user.reservations
+    @reservations = current_user.reservations
     @my_unicorns = current_user.unicorns
     @reservations = []
     @my_unicorns.each do |unicorn|

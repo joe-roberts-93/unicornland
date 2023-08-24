@@ -1,22 +1,22 @@
 .container-height {
-  height: 70vh;
-  margin: auto 0;
+  min-height: 100vh;
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  align-items: center;
 }
 
-.container-reservation {
-  max-width: 1700px;
-  margin: 0 auto;
-  padding: 20px;
-  background-color: #fcb1d6;
-  border-radius: 40px;
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
-}
+// .container-reservation {
+//   max-width: 1700px;
+//   margin: 0 auto;
+//   padding: 20px;
+//   background-color: #fcb1d6;
+//   border-radius: 40px;
+//   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+// }
 
 .details-reservation {
-  color: #7928CA;
+  // color: #7928CA;
+  color: #ff69b4;
   text-align: center;
   margin-bottom: 20px;
 }
@@ -25,6 +25,11 @@
   color: #7928CA;
   text-align: center;
   margin-bottom: 20px;
+  // background-color: #fff9fb;
+  border-radius: 10px;
+  padding: 10px;
+  align-items: center;
+  display: flex;
 }
 
 .yes {
@@ -43,11 +48,15 @@
 }
 
 .row-header {
-  background-color: #FF0080;
+  // background-color: #FF0080;
   padding: 10px 0;
   text-align: left;
   font-weight: bold;
   color: #ff69b4;
+  background-color: #ffe6f0;
+  padding: 10px;
+  border-radius: 10px;
+  margin-bottom: 15px;
   }
 
   .yes {
@@ -56,4 +65,12 @@
 
   .no {
     color: #ff0000;
+  }
+
+  .col-content {
+    padding: 0;
+  }
+
+  .col {
+    text-align: center;
   }
