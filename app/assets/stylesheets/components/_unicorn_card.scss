@@ -5,6 +5,9 @@
   border-radius: 3px;
   transition-timing-function: ease-in-out;
   transition: 0.4s;
+  padding: 10px;
+  border: 1px solid black;
+
 
   &:hover {
     transform: scale(1.1) rotate(2deg)
@@ -14,6 +17,9 @@
 .unicorn-card img {
   border-radius: 3px;
   margin-bottom: 6px;
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
 }
 
 .unicorn-card-text p{

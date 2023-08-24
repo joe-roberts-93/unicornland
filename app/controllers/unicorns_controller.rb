@@ -13,6 +13,7 @@ class UnicornsController < ApplicationController
     @unicorn = Unicorn.new(unicorn_params)
     @unicorn.user = current_user
     if @unicorn.save
+      current_user.update(owner: true)
       redirect_to unicorn_path(@unicorn)
     else
       render :new, status: :unprocessable_entity
