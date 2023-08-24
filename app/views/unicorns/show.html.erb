@@ -37,18 +37,24 @@
 
 <div class="rent-unicorn">
   <span class="gradient"><h5>Interested in this unicorn ?</h5></span>
-  <p>Rent it now ! Decide when you want to get it :</p>
-  <div class="rent-form">
-    <%= simple_form_for([@unicorn, @reservation]) do |f| %>
-      <%= f.input :date,
-              as: :string,
-              input_html: { data: { controller: "datepicker" }, class: "date-input" }
-              %>
-      <%= button_tag(type: 'submit', class: "button") do %>
-        Rent your <span class="gradient">unicorn</span> !
+
+  <% if user_signed_in? %>
+    <p>Rent it now ! Decide when you want to get it :</p>
+    <div class="rent-form">
+      <%= simple_form_for([@unicorn, @reservation]) do |f| %>
+        <%= f.input :date,
+                as: :string,
+                input_html: { data: { controller: "datepicker" }, class: "date-input" }
+                %>
+        <%= button_tag(type: 'submit', class: "button") do %>
+          Rent your <span class="gradient">unicorn</span> !
+        <% end %>
       <% end %>
-    <% end %>
-  </div>
+    </div>
+  <% else %>
+    <p>Rent it now !</p>
+    <%= link_to "Login", new_user_session_path, class: "cta-button" %>
+  <% end %>
 </div>
 <%# <span class="gradient">unicorn</span> %>
 
@@ -68,5 +74,5 @@
     <% end %>
   </div>
 
-<%= link_to 'See all our unicorns', unicorns_path, class: "button" %>
+  <%= link_to 'See all our unicorns', unicorns_path, class: "button" %>
 </div>
