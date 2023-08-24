@@ -3,39 +3,34 @@
     <h1>My reservations</h1>
   </div>
 
-
     <% @reservations.each do |reservation| %>
-
       <% if reservation.user.owner == false %>
         <div class="row mt-5">
-        <div class="col-3">
-          <div class="card mb-5" style="width: 18rem;">
-            <% if reservation.unicorn.photo.key.nil? %>
-              <%= image_tag "unicorn_placeholder.jpg" %>
-            <% else %>
-              <%= cl_image_tag reservation.unicorn.photo.key, class: "card-img-top", alt: "A photo of this unicorn" %>
-            <% end %>
+          <div class="col-3">
+            <div class="card mb-5" style="width: 18rem;">
+              <% if reservation.unicorn.photo.key.nil? %>
+                <%= image_tag "unicorn_placeholder.jpg" %>
+              <% else %>
+                <%= cl_image_tag reservation.unicorn.photo.key, class: "card-img-top", alt: "A photo of this unicorn" %>
+              <% end %>
               <h5 class="card-title"><%= reservation.unicorn.name %></h5>
               <p class="card-text"> <%= reservation.unicorn.gender %> </p>
               <p class="card-text"> <%= reservation.unicorn.age %> <%= reservation.unicorn.age == 1 ? "year" : "years" %> old</p>
               <p class="card-text"> <%= reservation.unicorn.color %></p>
               <p class="card-text">$<%= reservation.unicorn.price.floor %></p>
               <p class="card-text"> <%= reservation.unicorn.variety %></p>
-              </p>
               <p class="card-text">
-                <% if reservation.approved %>
-                <%= "Confirmed" %>
-                <% elsif reservation.approved == false %>
-                <% "Declined" %>
-                <% else %>
-                <%= "Pending confirmation" %>
-                <%end%>
-              </p>
+              <% if reservation.approved %>
+              <%= "Confirmed" %>
+              <% elsif reservation.approved == false %>
+              <% "Declined" %>
+              <% else %>
+              <%= "Pending confirmation" %>
+              <%end%>
             </div>
           </div>
         </div>
       <% end %>
-
     <% end %>
   </div>
 </div>
