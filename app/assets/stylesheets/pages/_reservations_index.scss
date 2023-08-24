@@ -1,31 +1,47 @@
+.incoming-reservations {
+  caption-side: top;
+  text-align: center;
+  & h1 {
+    color: $black;
+  }
+  margin: 100px 0;
+}
 table {
   width: 80%;
   border-collapse: collapse;
   background-color: white;
-  color: #7928CA;
+  color: $black;
   justify-content: center;
   border-spacing: 0.5rem;
   margin-left: auto;
   margin-right: auto;
   margin-top: auto;
-  margin-bottom: auto
+  margin-bottom: auto;
 }
 
-th, td {
+th,
+td {
   padding: 10px;
   text-align: center;
-  border-bottom: 1px solid #f4abcf;
+  border-bottom: 1px solid $black;
 }
+
 th {
-  background-color:#f4abcf;
+  font-family: "AgrandirText-Bold";
+  background-color: $black;
+  color: white;
 }
 
-.incoming-reservations {
-  font-size: 80px;
-  color: #7928CA;
-  background-color: #f4abcf;
-  padding: 10px;
-  caption-side: top;
-  text-align: center;
+.gradient {
+  color: $linear-gradient;
 }
 
+.btn-success {
+  background-color: rgb(131, 223, 169);
+  border: none;
+}
+
+.btn-danger {
+  background-color: rgb(223, 131, 131);
+  border: none;
+}
