@@ -1,6 +1,6 @@
 // Specific CSS for your home-page
 .gradient {
-  background: linear-gradient(27deg, #7928ca, #ff0080, #7928ca);
+  background: $linear-gradient;
   background-clip: text;
   -webkit-text-fill-color: transparent;
 }
