@@ -15,4 +15,5 @@ Rails.application.routes.draw do
   end
 
   get "/my-reservations", to: "reservations#user_reservations"
+  get "/my-listings", to: "unicorns#owner_listings"
 end

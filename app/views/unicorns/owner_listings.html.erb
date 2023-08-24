@@ -1,0 +1,31 @@
+<div class="container mt-5">
+  <div class="d-flex justify-content-center">
+    <h1>My listings</h1>
+  </div>
+
+  <div class="row">
+    <% if @unicorns.any? %>
+
+      <% @unicorns.each do |unicorn| %>
+        <div class= "col-3">
+          <div class="my-reservation-card mb-5">
+            <% if unicorn.photo.key.nil? %>
+              <%= image_tag "unicorn_placeholder.jpg", class: "card-img-top"%>
+            <% else %>
+              <%= cl_image_tag unicorn.photo.key, class: "card-img-top", alt: "A photo of this unicorn" %>
+            <% end %>
+            <h5 class="card-title"><%= unicorn.name.capitalize %></h5>
+            <p class="card-text"> Gender: <%= unicorn.gender %></p>
+            <p class="card-text"> Age: <%= unicorn.age %></p>
+            <p class="card-text"> Color: <%= unicorn.color %></p>
+            <p class="card-text"> Variety: <%= unicorn.variety %></p>
+            <p class="card-text"> price: <%= unicorn.price.to_i %> $</p>
+          </div>
+        </div>
+      <% end %>
+
+    <% else %>
+      <p>You have no unicorns yet!</p>
+    <% end %>
+  </div>
+</div>

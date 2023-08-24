@@ -14,7 +14,7 @@ class UnicornsController < ApplicationController
     @unicorn.user = current_user
     if @unicorn.save
       current_user.update(owner: true)
-      redirect_to unicorn_path(@unicorn)
+      redirect_to my_listings_path
     else
       render :new, status: :unprocessable_entity
     end
@@ -25,6 +25,10 @@ class UnicornsController < ApplicationController
     # TODO: improve logic to recommend more relevant unicorns
     @unicorns = Unicorn.first(3)
     @reservation = Reservation.new
+  end
+
+  def owner_listings
+    @unicorns = current_user.unicorns
   end
 
   private
