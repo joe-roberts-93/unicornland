@@ -1,8 +1,12 @@
 table {
-  width: 100%;
+  width: 90%;
   border-collapse: collapse;
   background-color: white;
   color: #7928CA;
+  justify-content: center;
+  border-spacing: 0.5rem;
+  margin-left: auto;
+  margin-right: auto
 }
 
 th, td {
