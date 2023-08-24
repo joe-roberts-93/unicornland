@@ -3,6 +3,8 @@ class UnicornsController < ApplicationController
 
   def index
     @unicorns = Unicorn.all
+    # @unicorns = Unicorn.search_by_name(params[:query]) if params[:query].present?
+    @unicorns = Unicorn.search_by_name(params[:gender])
   end
 
   def new

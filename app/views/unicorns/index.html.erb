@@ -1,5 +1,24 @@
 <div class="container mt-5">
-  <div class="row">
+
+  <div class="row justify-content-center">
+    <div class="col-8 my-3">
+      <%= form_with url: unicorns_path, method: :get, class: "d-flex" do %>
+        <%= text_field_tag :query,
+          params[:query],
+          class: "form-control",
+          placefolder: "type a keyword"
+        %>
+        <%= select_tag(:gender, options_for_select(Unicorn::GENDER)) %>
+        <%= select_tag(:gender, options_for_select(Unicorn::AGE)) %>
+        <%= select_tag(:gender, options_for_select(Unicorn::COLOR)) %>
+        <%= select_tag(:gender, options_for_select(Unicorn::PRICE)) %>
+        <%= select_tag(:gender, options_for_select(Unicorn::VARIETY)) %>
+        <%= submit_tag "Search", class: "btn" %>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="row mt-5">
     <% @unicorns.each do |unicorn| %>
       <div class="col-3">
 
