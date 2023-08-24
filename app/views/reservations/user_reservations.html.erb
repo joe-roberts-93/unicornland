@@ -5,29 +5,25 @@
   <div class="row">
       <% @reservations.each do |reservation| %>
         <div class= "col-3">
-        <% if reservation.user.owner == false %>
-          <%= link_to unicorn_path(reservation.unicorn), class: "text-decoration-none" do %>
-            <div class="my-reservation-card mb-5">
-              <% if reservation.unicorn.photo.key.nil? %>
-                <%= image_tag "unicorn_placeholder.jpg", class: "card-img-top"%>
-              <% else %>
-                <%= cl_image_tag reservation.unicorn.photo.key, class: "card-img-top", alt: "A photo of this unicorn" %>
-              <% end %>
-              <h5 class="card-title"><%= reservation.unicorn.name.capitalize %></h5>
-              <p class="card-text"> Rented from: <%= reservation.date %></p>
-              <p class="card-text"> Owner: <%= reservation.unicorn.user.first_name %></p>
-              <p class="card-text">
-              <% if reservation.approved %>
-                <%= "Confirmed" %>
-              <% elsif reservation.approved == false %>
-                <% "Declined" %>
-              <% else %>
-                <%= "Pending confirmation" %>
-              <%end%>
-              </p>
-            </div>
-          <%end%>
-          <% end %>
+          <div class="my-reservation-card mb-5">
+            <% if reservation.unicorn.photo.key.nil? %>
+              <%= image_tag "unicorn_placeholder.jpg", class: "card-img-top"%>
+            <% else %>
+              <%= cl_image_tag reservation.unicorn.photo.key, class: "card-img-top", alt: "A photo of this unicorn" %>
+            <% end %>
+            <h5 class="card-title"><%= reservation.unicorn.name.capitalize %></h5>
+            <p class="card-text"> Rented from: <%= reservation.date %></p>
+            <p class="card-text"> Owner: <%= reservation.unicorn.user.first_name %></p>
+            <p class="card-text">
+            <% if reservation.approved %>
+              <%= "Confirmed" %>
+            <% elsif reservation.approved == false %>
+              <% "Declined" %>
+            <% else %>
+              <%= "Pending confirmation" %>
+            <% end %>
+            </p>
+          </div>
         </div>
       <% end %>
     </div>
