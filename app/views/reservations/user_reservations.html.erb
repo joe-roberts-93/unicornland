@@ -2,7 +2,10 @@
   <div class="d-flex justify-content-center">
     <h1>My reservations</h1>
   </div>
+
   <div class="row">
+    <% if @reservations.any? %>
+
       <% @reservations.each do |reservation| %>
         <div class= "col-3">
           <div class="my-reservation-card mb-5">
@@ -27,10 +30,13 @@
               <p class="card-text" style="color:gray">
                 <%= "Status: Pending confirmation" %>
               </p>
-            <%end%>
+            <% end %>
           </div>
         </div>
       <% end %>
-    </div>
+
+    <% else %>
+      <p>You have no reservations yet!</p>
+    <% end %>
   </div>
 </div>
