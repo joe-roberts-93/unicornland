@@ -16,13 +16,18 @@
             <p class="card-text"> Owner: <%= reservation.unicorn.user.first_name %></p>
             <p class="card-text">
             <% if reservation.approved %>
-              <%= "Confirmed" %>
+              <p class="card-text" style="color:green">
+                <%= "Status: Confirmed" %>
+              </p>
             <% elsif reservation.approved == false %>
-              <% "Declined" %>
+              <p class="card-text" style="color:red">
+                <% "Status: Declined" %>
+              </p>
             <% else %>
-              <%= "Pending confirmation" %>
-            <% end %>
-            </p>
+              <p class="card-text" style="color:gray">
+                <%= "Status: Pending confirmation" %>
+              </p>
+            <%end%>
           </div>
         </div>
       <% end %>
