@@ -1,0 +1,24 @@
+.my-reservation-card {
+  display: flex;
+  flex-direction: column;
+  color:deeppink;
+  border: 1px black solid;
+  padding: 10px;
+  border-radius: 3px;
+  
+  &:hover {
+    transform: scale(1.1) rotate(2deg)
+  }
+}
+
+.my-reservation-card img {
+  border-radius: 3px;
+  margin-bottom: 6px;
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+
+.my-reservation-card p{
+  margin: 0px;
+}
