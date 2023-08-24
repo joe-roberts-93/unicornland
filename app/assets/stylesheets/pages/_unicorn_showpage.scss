@@ -5,7 +5,7 @@ h2 {
 }
 
 .gradient {
-  color: linear-gradient(27deg, #7928CA, #FF0080, #7928CA);
+  color: $linear-gradient;
 }
 
 .show-container {
@@ -30,6 +30,9 @@ h2 {
       flex-direction: column;
       justify-content: space-between;
       & .tag {
+        & p {
+          font-family: "AgrandirText-Bold";
+        }
         display: flex;
         flex-direction: row;
         gap: 90px;
@@ -59,36 +62,40 @@ h2 {
     border: 1px solid black;
   }
   & .button {
-  border: 1px solid black;
-  padding: 10px 40px;
-  border-radius: 5px;
-  background-color: none;
-  transition: 0.2s ease-in-out;
+    border: 1px solid black;
+    padding: 10px 40px;
+    border-radius: 5px;
+    background-color: none;
+    transition: 0.2s ease-in-out;
     &:hover {
       background: black;
       color: white;
-      border: none;
+      border: 1px solid black;
     }
   }
 }
 
 .unicorn-suggestion {
+  & h2 {
+    text-transform: none !important;
+  }
   padding: 30px 50px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   & .button {
-  border: 1px solid black;
-  color: black;
-  padding: 10px 40px;
-  border-radius: 5px;
-  background-color: none;
-  transition: 0.2s ease-in-out;
+    border: 1px solid black;
+    color: black;
+    padding: 10px 40px;
+    border-radius: 5px;
+    background-color: none;
+    transition: 0.2s ease-in-out;
     &:hover {
       background: black;
       color: white;
       border: none;
+      border: 1px solid black;
     }
   }
 }
