@@ -7,6 +7,7 @@
   background-color: none;
   transition: 0.2s ease-in-out;
   font-family: "AgrandirText-Bold";
+  text-align: center;
   &:hover {
     background: black;
     color: white;
@@ -30,12 +31,18 @@ a {
 
 .delete-action {
   border: 1px solid black;
+  color:deeppink;
   padding: 10px 40px;
   margin-top: 20px;
   border-radius: 5px;
   background-color: none;
   transition: 0.2s ease-in-out;
   font-family: "AgrandirText-Bold";
+  box-sizing: border-box;
+  // width: 90px;
+  // height: 40px;
+  // display: inline-block;
+  text-align: center;
   &:hover {
     background: black;
     color: white;
