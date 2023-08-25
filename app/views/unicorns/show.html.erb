@@ -52,7 +52,6 @@
     <%= link_to "Login", new_user_session_path, class: "cta-button" %>
   <% end %>
 </div>
-<%# <span class="gradient">unicorn</span> %>
 
 <div class="unicorn-suggestion">
   <h2>Check out for more Unicorns !</h2>
@@ -60,12 +59,14 @@
   <div class="iteration">
     <% @unicorns.each do |unicorn| %>
       <div class="unicorn-cards-info">
-        <%= image_tag "business.png"%>
-        <div class="tags">
-          <h5><%= unicorn.name %></h5>
-          <p><%= unicorn.age %>, <%= unicorn.color %>, ...<p>
+        <div class="info-wrapper">
+          <div class="circle" style="background-image: url('<%= cl_image_path unicorn.photo.key %>')"></div>
+          <div class="tags">
+            <h5><%= unicorn.name %></h5>
+            <p><%= unicorn.gender %>, <%= unicorn.age %> <%= unicorn.age == 1 ? "year" : "years" %> old, <%= unicorn.color %><p>
+          </div>
         </div>
-        <%= link_to "See this unicorn", unicorn_path(unicorn) %>
+        <%= link_to "Discover more", unicorn_path(unicorn) %>
       </div>
     <% end %>
   </div>
