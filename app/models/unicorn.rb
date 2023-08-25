@@ -1,7 +1,7 @@
 class Unicorn < ApplicationRecord
   GENDER = ["male", "female"].freeze
   AGE = (1..12).to_a.freeze
-  COLOR = ["gold", "pink", "white", "green"].freeze
+  COLOR = ["gold", "pink", "white", "green", "purple"].freeze
   PRICE = [10_000, 15_000, 20_000, 50_000, 70_000, 250_000, 300_000, 500_000, 1_000_000].freeze
   VARIETY = ["Bulky", "Fat", "Haunted", "Business", "Murder", "Cute", "Barbie"].freeze
 

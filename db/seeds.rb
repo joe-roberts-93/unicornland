@@ -80,6 +80,6 @@ kitty.photo.attach(io: kitty_photo, filename: "kitty.png", content_type: "image/
 kitty.save
 
 marcelo_photo = URI.open("https://th.bing.com/th/id/OIG.Fb9QoL95Cez4gEecAgvI?pid=ImgGn")
-marcelo = Unicorn.new(name: "marcelo", gender: "male", age: 10, color: "pink", price: "15_000", variety: "Bulky", team_member: false, user: owner)
+marcelo = Unicorn.new(name: "marcelo", gender: "male", age: 10, color: "purple", price: "15_000", variety: "Bulky", team_member: false, user: owner)
 marcelo.photo.attach(io: marcelo_photo, filename: "marcelo.png", content_type: "image/jpg")
 marcelo.save
