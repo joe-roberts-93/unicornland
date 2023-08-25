@@ -4,8 +4,8 @@
   <%= f.input :gender, collection: Unicorn::GENDER%>
   <%= f.input :age %>
   <%= f.input :color, collection: Unicorn::COLOR %>
-  <%= f.input :price, collection: Unicorn::PRICE%>
   <%= f.input :variety, collection: Unicorn::VARIETY %>
+  <%= f.input :price, collection: Unicorn::PRICE%>
   <%= f.input :photo, as: :file %>
   <%= f.submit 'Create Listing', class: "submit-new" %>
 <% end %>
