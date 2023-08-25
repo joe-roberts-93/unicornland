@@ -1,7 +1,7 @@
 .my-reservation-card {
   display: flex;
   flex-direction: column;
-  color:deeppink;
+  color: $pink;
   border: 1px black solid;
   padding: 10px;
   border-radius: 3px;
@@ -16,6 +16,6 @@
   object-fit: cover;
 }
 
-.my-reservation-card p{
+.my-reservation-card p {
   margin: 0px;
 }

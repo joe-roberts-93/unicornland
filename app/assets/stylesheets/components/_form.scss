@@ -1,0 +1,40 @@
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-inputs {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  & input {
+    border: 1px solid black;
+  }
+}
+
+.form-actions {
+  & input {
+    border: 1px solid black;
+    padding: 10px 40px;
+    margin-top: 20px;
+    border-radius: 5px;
+    background-color: none;
+    transition: 0.2s ease-in-out;
+    font-family: "AgrandirText-Bold";
+    &:hover {
+      background: black;
+      color: white;
+      border: 1px solid black;
+    }
+  }
+}
+
+.devise-links {
+  margin-top: 20px;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
