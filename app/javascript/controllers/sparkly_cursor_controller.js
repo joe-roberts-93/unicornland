@@ -5,9 +5,8 @@ import cursorTrail from "cursor-trail"
 export default class extends Controller {
   connect() {
     cursorTrail({
-      pattern: 'silverStars',
-      animationType: 'rotation90',
-      theme: 'light'
-    })
+        pattern: 'goldSparkles',
+        animationType: 'flash'
+      });
   }
 }
