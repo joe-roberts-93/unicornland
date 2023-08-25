@@ -15,7 +15,7 @@
     <% @unicorns.each do |unicorn| %>
       <% if unicorn.team_member %>
         <div class="about-team-member-card">
-          <div class="circle"></div>
+            <div class="circle" style="background-image: url('<%= cl_image_path unicorn.photo.key %>')"></div>
           <h6><%= unicorn.name %></h6>
           <p>
             <% if unicorn.variety == "Fat" %>
@@ -23,7 +23,7 @@
             <% elsif unicorn.variety == "Business" %>
               Hoy. I'm a <%= unicorn.age %> <%= unicorn.age == 1 ? "year old" : "years old "%>, <%= unicorn.color %> and a <%= unicorn.variety %> unicorn.</p>
             <% elsif unicorn.variety == "Barbie" %>
-              Heyyy, I'm a <%= unicorn.age %> <%= unicorn.age == 1 ? "year old" : "years old "%>, <%= unicorn.color %> and a <%= unicorn.variety %> unicorn.</p>
+              Hi Barbie ! Hi Ken ! *eating chocolate* </br> I'm a <%= unicorn.age %> <%= unicorn.age == 1 ? "year old" : "years old "%>, <%= unicorn.color %> and a <%= unicorn.variety %> unicorn.</p>
             <% elsif unicorn.variety == "Bulky" %>
               MAMAMIA ! I'm a <%= unicorn.age %> <%= unicorn.age == 1 ? "year old" : "years old "%>, <%= unicorn.color %> and a <%= unicorn.variety %> unicorn.</p>
             <% end %>
