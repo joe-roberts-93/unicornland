@@ -7,7 +7,7 @@
   <%= f.input :price %>
   <%= f.select :variety, collection: Unicorn::VARIETY %>
   <%= f.input :photo, as: :file %>
-  <%= f.submit 'Create Listing' %>
+  <%= f.submit 'Create Listing', class: "submit-new" %>
 <% end %>
 <div class="devise-links">
   <%= link_to 'Back to my unicorns', my_listings_path %>
