@@ -55,7 +55,7 @@ audrey.photo.attach(io: audrey_photo, filename: "audrey.png", content_type: "ima
 audrey.save
 
 david_photo = URI.open("https://th.bing.com/th/id/OIG.Ry9IM5IPtX30dGHwpNql?pid=ImgGn")
-david = Unicorn.new(name: "david", gender: "female", age: 5, color: "white", price: "10_000", variety: "Murder", team_member: false, user: owner)
+david = Unicorn.new(name: "david", gender: "male", age: 5, color: "white", price: "10_000", variety: "Murder", team_member: false, user: owner)
 david.photo.attach(io: david_photo, filename: "david.png", content_type: "image/jpg")
 david.save
 
