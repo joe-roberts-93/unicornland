@@ -15,14 +15,27 @@
         <%= select_tag(:variety, options_for_select(Unicorn::VARIETY), prompt: "Variety", class: "search-select") %>
         <%= submit_tag "Search", class: "form-search-btn" %>
       <% end %>
-      <div class="d-flex justify-content">
-        <%= params[:name] if params[:name].present? %>
-        <%= params[:gender] if params[:gender].present? %>
-        <%= "#{params[:age]} y.o." if params[:age].present? %>
-        <%= params[:color] if params[:color].present? %>
-        <%= "$#{params[:age]}" if params[:age].present? %>
-        <%= params[:variety] if params[:variety].present? %>
-      </div>
+    </div>
+    <div class="d-flex justify-content-center">
+      <% if params[:gender].present? %>
+        <div class="tags"><%= params[:gender] %></div>
+      <% end %>
+
+      <% if params[:age].present? %>
+        <div class="tags"><%= "#{params[:age]} y.o." %></div>
+      <% end %>
+
+      <% if params[:color].present? %>
+        <div class="tags"><%= params[:color] %></div>
+      <% end %>
+
+      <% if params[:price].present? %>
+        <div class="tags"><%= "$#{params[:price]}" %></div>
+      <% end %>
+
+      <% if params[:variety].present? %>
+        <div class="tags"><%= params[:variety] %></div>
+      <% end %>
     </div>
   </div>
 
