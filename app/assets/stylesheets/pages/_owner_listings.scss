@@ -1,5 +1,6 @@
 .edit-action {
   border: 1px solid black;
+  color:deeppink;
   padding: 10px 40px;
   margin-top: 20px;
   border-radius: 5px;
@@ -13,11 +14,17 @@
   }
 }
 
+a {
+  text-decoration: none;
+  color: deeppink;
+}
+
 .listings-wrapper {
-  display:flex;
+  display: grid;
   gap: 30px;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
   & .my-reservation-card {
-    width: 500px;
+    width: 300px;
   }
 }
 
