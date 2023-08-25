@@ -58,7 +58,7 @@
   <h2>Check out for more Unicorns !</h2>
 
   <div class="iteration">
-    <% @unicorns.each do |unicorn| %>
+    <% @unicorns.first(3).each do |unicorn| %>
       <div class="unicorn-cards-info">
         <%= image_tag "business.png"%>
         <div class="tags">
