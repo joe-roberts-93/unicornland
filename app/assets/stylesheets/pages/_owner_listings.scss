@@ -1,6 +1,6 @@
 .edit-action {
   border: 1px solid black;
-  color:deeppink;
+  color: deeppink;
   padding: 10px 40px;
   margin-top: 20px;
   border-radius: 5px;
@@ -23,15 +23,15 @@ a {
 .listings-wrapper {
   display: grid;
   gap: 30px;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   & .my-reservation-card {
-    width: 300px;
+    width: 100%;
   }
 }
 
 .delete-action {
   border: 1px solid black;
-  color:deeppink;
+  color: deeppink;
   padding: 10px 40px;
   margin-top: 20px;
   border-radius: 5px;
