@@ -10,6 +10,9 @@
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto">
+        <li class="nav-item nav-link">
+          <%= link_to "Our unicorns", unicorns_path, class: "nav-link" %>
+        </li>
         <% if user_signed_in? && current_user.owner == false %>
           <li class="nav-item dropdown">
             <a href="#" class="avatar" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
