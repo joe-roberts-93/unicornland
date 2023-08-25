@@ -15,7 +15,7 @@ User.destroy_all
 User.create!(first_name: "Sebastien", last_name: "Fournier", email: "seb@email.com", password: "secret")
 owner = User.create!(first_name: "Joe", last_name: "Roberts", email: "joe@email.com", password: "secret", owner: true)
 
-joe_photo = URI.open("https://th.bing.com/th/id/OIG.SJGSFRcOVzRCQEvhNzCV?pid=ImgGn")
+joe_photo = URI.open("https://th.bing.com/th/id/OIG.1DiMHek3_Fm4UCNTmxCe?pid=ImgGn")
 joe = Unicorn.new(name: "joe", gender: "male", age: 12, color: "gold", price: "1_000_000", variety: "Fat", team_member: true, user: owner )
 joe.photo.attach(io: joe_photo, filename: "joe_unicorn.jpg", content_type: "image/jpg")
 joe.save
