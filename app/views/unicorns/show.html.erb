@@ -57,7 +57,7 @@
   <h2>Check out for more Unicorns !</h2>
 
   <div class="iteration">
-    <% @unicorns.each do |unicorn| %>
+    <% @unicorns.first(3).each do |unicorn| %>
       <div class="unicorn-cards-info">
         <div class="info-wrapper">
           <div class="circle" style="background-image: url('<%= cl_image_path unicorn.photo.key %>')"></div>

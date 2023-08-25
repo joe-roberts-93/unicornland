@@ -29,7 +29,14 @@ class UnicornsController < ApplicationController
   def show
     @unicorn = Unicorn.find(params[:id])
     # TODO: improve logic to recommend more relevant unicorns
-    @unicorns = Unicorn.first(3)
+    similar_unicorns = Unicorn.where(variety: @unicorn.variety).where.not(id: @unicorn.id)
+    similar_price_unicorns = Unicorn.where(price: @unicorn.price).where.not(id: @unicorn.id)
+    similar_color_unicorns = Unicorn.where(color: @unicorn.color).where.not(id: @unicorn.id)
+    suggested_unicorns = []
+    suggested_unicorns << similar_unicorns
+    suggested_unicorns << similar_price_unicorns
+    suggested_unicorns << similar_color_unicorns
+    @unicorns = suggested_unicorns.flatten
     @reservation = Reservation.new
   end
 
