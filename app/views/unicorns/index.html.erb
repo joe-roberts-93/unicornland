@@ -2,18 +2,18 @@
 
   <div class="row justify-content-center">
     <div class="col-8 my-3">
-      <%= form_with url: unicorns_path, method: :get, class: "d-flex" do %>
+      <%= form_with url: unicorns_path, method: :get, class: "search-form" do %>
         <%= text_field_tag :name,
           nil,
-          class: "form-control",
+          class: "form-search-control",
           placefolder: "type a keyword"
         %>
-        <%= select_tag(:gender, options_for_select(Unicorn::GENDER), prompt: "Gender") %>
-        <%= select_tag(:age, options_for_select(Unicorn::AGE.map { |age| ["#{age} y.o.", age] }), prompt: "Age") %>
-        <%= select_tag(:color, options_for_select(Unicorn::COLOR), prompt: "Color") %>
-        <%= select_tag(:price, options_for_select(Unicorn::PRICE.map { |price| ["$#{price}", price]}), prompt: "Price") %>
-        <%= select_tag(:variety, options_for_select(Unicorn::VARIETY), prompt: "Variety") %>
-        <%= submit_tag "Search", class: "btn" %>
+        <%= select_tag(:gender, options_for_select(Unicorn::GENDER), prompt: "Gender", class: "search-select") %>
+        <%= select_tag(:age, options_for_select(Unicorn::AGE.map { |age| ["#{age} y.o.", age] }), prompt: "Age", class: "search-select") %>
+        <%= select_tag(:color, options_for_select(Unicorn::COLOR), prompt: "Color", class: "search-select") %>
+        <%= select_tag(:price, options_for_select(Unicorn::PRICE.map { |price| ["$#{price}", price]}), prompt: "Price", class: "search-select") %>
+        <%= select_tag(:variety, options_for_select(Unicorn::VARIETY), prompt: "Variety", class: "search-select") %>
+        <%= submit_tag "Search", class: "form-search-btn" %>
       <% end %>
     </div>
   </div>
