@@ -83,3 +83,8 @@ marcelo_photo = URI.open("https://th.bing.com/th/id/OIG.Fb9QoL95Cez4gEecAgvI?pid
 marcelo = Unicorn.new(name: "marcelo", gender: "male", age: 10, color: "purple", price: "15_000", variety: "Bulky", team_member: false, user: owner)
 marcelo.photo.attach(io: marcelo_photo, filename: "marcelo.png", content_type: "image/jpg")
 marcelo.save
+
+mg_photo = URI.open("https://www.bing.com/images/create/photo-of-a-business-unicorn-with-color-pink/64e9069087ce4e60885980a0735da276?id=RrizaTTMEwRnGAM1c4p%2fiQ%3d%3d&view=detailv2&idpp=genimg&FORM=GCRIDP&ajaxhist=0&ajaxserp=0")
+mg = Unicorn.new(name: "mg", gender: "female", age: 10, color: "pink", price: "15_000", variety: "Business", team_member: false, user: owner)
+mg.photo.attach(io: mg_photo, filename: "mg.png", content_type: "image/jpg")
+mg.save
