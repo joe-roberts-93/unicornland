@@ -1,5 +1,5 @@
-<h2>Add your unicorn</h2>
-<%= simple_form_for([@user, @unicorn]) do |f| %>
+<h2>Edit <%= @unicorn.name %> Listing</h2>
+<%= simple_form_for @unicorn do |f| %>
   <%= f.input :name %>
   <%= f.input :gender %>
   <%= f.input :age %>
@@ -7,7 +7,7 @@
   <%= f.input :price %>
   <%= f.select :variety, collection: Unicorn::VARIETY %>
   <%= f.input :photo, as: :file %>
-  <%= f.submit 'Create Listing' %>
+  <%= f.submit 'Update Listing' %>
 <% end %>
 
-<%= link_to 'Back to My Listings', my_listings_unicorns_path %>
+<%= link_to 'Back to My Listings', my_listings_path %>
