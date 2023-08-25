@@ -26,6 +26,26 @@ class UnicornsController < ApplicationController
     end
   end
 
+  def edit
+    @unicorn = Unicorn.find(params[:id])
+    # redirect_to my_listings_path
+  end
+
+  def update
+    @unicorn = Unicorn.find(params[:id])
+    if @unicorn.update(unicorn_params)
+      redirect_to unicorn_path(@unicorn)
+    else
+      render :edit, status: :unprocessable_entity
+    end
+  end
+
+  def destroy
+    @unicorn = Unicorn.find(params[:id])
+    @unicorn.destroy
+    redirect_to my_listings_path
+  end
+
   def show
     @unicorn = Unicorn.find(params[:id])
     # TODO: improve logic to recommend more relevant unicorns
