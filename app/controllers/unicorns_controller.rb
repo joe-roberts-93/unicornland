@@ -3,8 +3,12 @@ class UnicornsController < ApplicationController
 
   def index
     @unicorns = Unicorn.all
-    # @unicorns = Unicorn.search_by_name(params[:query]) if params[:query].present?
-    @unicorns = Unicorn.search_by_name(params[:gender])
+    @unicorns = @unicorns.search_by_name(params[:name]) if params[:name].present?
+    @unicorns = @unicorns.search_by_gender(params[:gender]) if params[:gender].present?
+    @unicorns = @unicorns.search_by_age(params[:age]) if params[:age].present?
+    @unicorns = @unicorns.search_by_color(params[:color]) if params[:color].present?
+    @unicorns = @unicorns.search_by_price(params[:price]) if params[:price].present?
+    @unicorns = @unicorns.search_by_variety(params[:variety]) if params[:variety].present?
   end
 
   def new
@@ -20,19 +24,6 @@ class UnicornsController < ApplicationController
     else
       render :new, status: :unprocessable_entity
     end
-  end
-
-  def edit
-    @unicorn = Unicorn.find(params[:id])
-  end
-
-  def update
-    @unicorn = Unicorn.find(params[:id])
-      if @unicorn.update(unicorn_params)
-        redirect_to my_listings_path
-      else
-        render :edit, status: :unprocessable_entity
-      end
   end
 
   def show
@@ -51,12 +42,6 @@ class UnicornsController < ApplicationController
 
   def owner_listings
     @unicorns = current_user.unicorns
-  end
-
-  def destroy
-    @unicorn = Unicorn.find(params[:id])
-    @unicorn.destroy
-    redirect_to my_listings_path
   end
 
   private

@@ -1,16 +1,15 @@
 .unicorn-card {
   display: flex;
   flex-direction: column;
-  color:deeppink;
+  color: $pink;
   border-radius: 3px;
   transition-timing-function: ease-in-out;
   transition: 0.4s;
   padding: 10px;
   border: 1px solid black;
 
-
   &:hover {
-    transform: scale(1.1) rotate(2deg)
+    transform: scale(1.1) rotate(2deg);
   }
 }
 
@@ -22,7 +21,7 @@
   object-fit: cover;
 }
 
-.unicorn-card-text p{
+.unicorn-card-text p {
   margin: 0px;
 }
 
@@ -33,7 +32,7 @@
 
 .unicorn-price-container {
   display: flex;
-    & .price-bold {
-      font-weight: 700;
-    }
+  & .price-bold {
+    font-weight: 700;
+  }
 }

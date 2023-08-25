@@ -15,7 +15,7 @@
     <% @unicorns.each do |unicorn| %>
       <% if unicorn.team_member %>
         <div class="about-team-member-card">
-            <div class="circle" style="background-image: url('<%= cl_image_path unicorn.photo.key %>')"></div>
+          <div class="circle" style="background-image: url('<%= cl_image_path unicorn.photo.key %>')"></div>
           <h6><%= unicorn.name %></h6>
           <p>
             <% if unicorn.variety == "Fat" %>
