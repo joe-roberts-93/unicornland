@@ -3,51 +3,55 @@
   <div class="row justify-content-center">
     <div class="col-8 my-3">
       <%= form_with url: unicorns_path, method: :get, class: "d-flex" do %>
-        <%= text_field_tag :query,
-          params[:query],
+        <%= text_field_tag :name,
+          nil,
           class: "form-control",
           placefolder: "type a keyword"
         %>
-        <%= select_tag(:gender, options_for_select(Unicorn::GENDER)) %>
-        <%= select_tag(:gender, options_for_select(Unicorn::AGE)) %>
-        <%= select_tag(:gender, options_for_select(Unicorn::COLOR)) %>
-        <%= select_tag(:gender, options_for_select(Unicorn::PRICE)) %>
-        <%= select_tag(:gender, options_for_select(Unicorn::VARIETY)) %>
+        <%= select_tag(:gender, options_for_select(Unicorn::GENDER), prompt: "Gender") %>
+        <%= select_tag(:age, options_for_select(Unicorn::AGE.map { |age| ["#{age} y.o.", age] }), prompt: "Age") %>
+        <%= select_tag(:color, options_for_select(Unicorn::COLOR), prompt: "Color") %>
+        <%= select_tag(:price, options_for_select(Unicorn::PRICE.map { |price| ["$#{price}", price]}), prompt: "Price") %>
+        <%= select_tag(:variety, options_for_select(Unicorn::VARIETY), prompt: "Variety") %>
         <%= submit_tag "Search", class: "btn" %>
       <% end %>
     </div>
   </div>
 
   <div class="row mt-5">
-    <% @unicorns.each do |unicorn| %>
-      <div class="col-3">
 
-        <%= link_to unicorn_path(unicorn), class: "text-decoration-none" do %>
-          <div class="unicorn-card mb-5">
-            <%# add the image from cl with unicorn.photo.key %>
-            <% if unicorn.photo.key.nil? %>
-            <%= image_tag "unicorn_placeholder.jpg" %>
-            <% else %>
-            <%= cl_image_tag unicorn.photo.key, class: "card-img-top", alt: "A photo of this unicorn" %>
-            <% end %>
-            <div class="car-body">
-              <div class= "unicorn-card-text">
-                <div class="unicorn-key-info">
-                  <h5 class="card-title"><%= unicorn.name.capitalize %></h5>
-                  <div class = unicorn-price-container>
-                    <p class="card-text"> <span class="price-bold"> $<%= unicorn.price.floor %></span> per week</p>
+    <% if @unicorns.any? %>
+      <% @unicorns.each do |unicorn| %>
+        <div class="col-3">
+          <%= link_to unicorn_path(unicorn), class: "text-decoration-none" do %>
+            <div class="unicorn-card mb-5">
+              <%# add the image from cl with unicorn.photo.key %>
+              <% if unicorn.photo.key.nil? %>
+              <%= image_tag "unicorn_placeholder.jpg" %>
+              <% else %>
+              <%= cl_image_tag unicorn.photo.key, class: "card-img-top", alt: "A photo of this unicorn" %>
+              <% end %>
+              <div class="car-body">
+                <div class= "unicorn-card-text">
+                  <div class="unicorn-key-info">
+                    <h5 class="card-title"><%= unicorn.name.capitalize %></h5>
+                    <div class = unicorn-price-container>
+                      <p class="card-text"> <span class="price-bold"> $<%= unicorn.price.floor %></span> per week</p>
+                    </div>
                   </div>
-                </div>
-                <div class="unicorn-description">
-                  <p class="card-text"><%= unicorn.gender.capitalize %>
-                  <p class="card-text"><%= unicorn.age %> <%= unicorn.age == 1 ? "year" : "years" %> old</p>
+                  <div class="unicorn-description">
+                    <p class="card-text"><%= unicorn.gender.capitalize %>
+                    <p class="card-text"><%= unicorn.age %> <%= unicorn.age == 1 ? "year" : "years" %> old</p>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-        <% end %>
-
-      </div>
+          <% end %>
+        </div>
+      <% end %>
+    <% else %>
+      <p>Sorry, no unicorns found.</p>
     <% end %>
+
   </div>
 </div>
