@@ -22,6 +22,12 @@
             <p class="card-text"> price: <%= unicorn.price.to_i %> $</p>
           </div>
         </div>
+        <% if current_user == unicorn.user %>
+          <div class="actions">
+            <%= link_to 'Edit Listing', edit_unicorn_path(unicorn) %>
+            <%= link_to 'Delete Listing', unicorn_path(unicorn), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+          </div>
+        <% end %>
       <% end %>
 
     <% else %>

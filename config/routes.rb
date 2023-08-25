@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   devise_for :users
 
   root to: "pages#home"
-  resources :unicorns, only: %i[index new create show] do
+  resources :unicorns do
     resources :reservations, only: %i[create]
   end
 
