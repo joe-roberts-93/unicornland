@@ -1,0 +1,37 @@
+.edit-action {
+  border: 1px solid black;
+  padding: 10px 40px;
+  margin-top: 20px;
+  border-radius: 5px;
+  background-color: none;
+  transition: 0.2s ease-in-out;
+  font-family: "AgrandirText-Bold";
+  &:hover {
+    background: black;
+    color: white;
+    border: 1px solid black;
+  }
+}
+
+.listings-wrapper {
+  display:flex;
+  gap: 30px;
+  & .my-reservation-card {
+    width: 500px;
+  }
+}
+
+.delete-action {
+  border: 1px solid black;
+  padding: 10px 40px;
+  margin-top: 20px;
+  border-radius: 5px;
+  background-color: none;
+  transition: 0.2s ease-in-out;
+  font-family: "AgrandirText-Bold";
+  &:hover {
+    background: black;
+    color: white;
+    border: 1px solid black;
+  }
+}
